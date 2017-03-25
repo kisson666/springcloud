@@ -1,5 +1,6 @@
 package com.wang.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/controller01")
 public class Controller01 {
+    @Value("${mysqldb.datasource.url}") String mysqlurl;
     @RequestMapping("/demo01")
     @ResponseBody
     public String demo01(){
@@ -21,5 +23,9 @@ public class Controller01 {
     @ResponseBody
     public String demo02(@PathVariable("username1") String username){
         return username;
+    }
+    @RequestMapping("/mysqlurl")
+    public String showmysqlurl(){
+        return mysqlurl;
     }
 }
