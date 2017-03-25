@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/
+
+words: a,b,c
+
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+#  这个的意思是随机指定个没使用的端口
+#spring:
+#  http:
+#    encoding:
+#      force: true
+#      charset: utf-8
+#      enabled: true
+#想解决中文乱码 结果上面的设置没有用
+#spring.http.encoding.charset=UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly.
+#spring.http.encoding.enabled=true # Enable http encoding support.
