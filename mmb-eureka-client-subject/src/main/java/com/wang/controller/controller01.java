@@ -17,4 +17,9 @@ public class controller01 {
         int i = (int)Math.round(Math.random()*(wordArray.length-1));
         return wordArray[i];
     }
+    @RequestMapping("/sub01")
+    public String getWord01(){
+        return "helloworld";
+
+    }
 }
